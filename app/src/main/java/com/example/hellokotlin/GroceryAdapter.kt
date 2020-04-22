@@ -27,9 +27,10 @@ class GroceryAdapter(private val items: ArrayList<Pair<String,Int>>) : RecyclerV
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        Log.d(TAG, "onBindViewHolder: ${items[position].first} ${items[position].second}") // apples still seems to be here, why doesn't it display?
-        holder.nameTextView.text = items[position].first
-        holder.numberTextView.text = items[position].second.toString()
+        var pos = holder.adapterPosition
+        Log.d(TAG, "onBindViewHolder: ${items[pos].first} ${items[position].second}")
+        holder.nameTextView.text = items[pos].first
+        holder.numberTextView.text = items[pos].second.toString()
     }
 
 
